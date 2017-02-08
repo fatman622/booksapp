@@ -1,0 +1,13 @@
+<div class="book>"> 
+	<%= form_for book, remote: true do |f| %>
+		<p class="content">Name: <%= book.name %></p> 
+		<p class="content">Autor: <%= book.autor %></p> 
+		<p class="content">Genre: <%= book.genre %></p> 
+		<p class="content">Year: <%= book.year %></p> 
+		<p class="time">Date: <%= book.created_at %></p> 
+		<%= link_to "Show", book_path(book) %>
+		<%= link_to "Delete", book, method: :delete, data: { confirm: "You sure?" } %>
+		<%= link_to "Update", book_path(book), :method => :update, :remote => true %>
+	<% end %>
+</div> 
+	

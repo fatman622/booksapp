@@ -1,0 +1,52 @@
+<div class="books">
+	<div class="container">
+		<b>Books</b>
+		<a href="#add-form" rel="modal:open">Add</a>
+		<ul id="books">
+			<%= render @books %>
+		</ul>
+	</div>
+</div>
+
+
+
+<%= form_for @book, remote:true , :html => {:class => "modal", :id => "update-form"} do |f| %>  
+			<div class="field"> 
+				Name: <%= f.text_field :name %> 
+			</div> 
+			<div class="field">
+				Autor: <%= f.text_field :autor %> 
+			</div> 
+			<div class="field">  
+				Genree: <%= f.text_field :genre %> 
+			</div>
+			<div class="field">  
+				Year: <%= f.text_field :year %> 
+			</div>
+			<div class="actions"> 
+				<%= f.submit "Update" %> 
+			</div> 
+		<% end %>
+
+
+<%= form_for(@book, remote: true, :html => {:class => "modal", :id => "add-form"}) do |f| %>  
+			<div class="field"> 
+				<%= f.label :name %><br> 
+				<%= f.text_field :name %> 
+			</div> 
+			<div class="field"> 
+				<%= f.label :autor %><br> 
+				<%= f.text_field :autor %> 
+			</div> 
+			<div class="field"> 
+				<%= f.label :genre %><br> 
+				<%= f.text_field :genre %> 
+			</div>
+			<div class="field"> 
+				<%= f.label :year %><br> 
+				<%= f.text_field :year %> 
+			</div>
+			<div class="actions"> 
+				<%= f.submit "Create" %> 
+			</div> 
+<% end %>
