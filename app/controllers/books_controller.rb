@@ -3,13 +3,17 @@ before_action :authenticate_user!
 before_action :find_book, only: [:edit, :update, :destroy, :show]
 
 	def index
-		@books= current_user.books
-		# @books = Book.all
+		# @books= current_user.books
+		@books = Book.all
 		@book = Book.new
 	end
 
 	def show
     	@book
+    	respond_to do |format|
+    		format.html
+    		format.json{render json: @book}
+    	end
   	end
 
 	def new

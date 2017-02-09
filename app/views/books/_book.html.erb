@@ -4,6 +4,7 @@
 		<p class="content">Autor: <%= book.autor %></p> 
 		<p class="content">Genre: <%= book.genre %></p> 
 		<p class="content">Year: <%= book.year %></p> 
+		<p class="content"> User: <%= book.user['email'] %></p>
 		<p class="time">Date: <%= book.created_at %></p> 
 		<%= link_to "Show", book_path(book) %>
 		<%= link_to "Delete", book, method: :delete, data: { confirm: "You sure?" } %>
