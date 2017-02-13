@@ -25,6 +25,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jquery-modal-rails-assets'
 gem 'active_model_serializers'
+gem "paperclip", "~> 5.0.0"
+gem 'apipie-rails'
 #best in place
 gem 'best_in_place'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

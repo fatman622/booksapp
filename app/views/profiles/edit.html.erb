@@ -1,12 +1,15 @@
 <% provide(:title, "Edit user") %>
 <h1>Update your profile</h1>
 
-    <%= form_for(@profile) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+    <%= form_for @profile, html: { multipart: true } do |f| %>
+		<%= f.label :image %>
+		<%= f.file_field :image, class: 'form-control' %>
+		
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: 'form-control' %>
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name, class: 'form-control' %>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      	<%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
