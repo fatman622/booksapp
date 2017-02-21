@@ -9,6 +9,8 @@
 		<%= link_to "Show", book_path(book) %>
 		<%= link_to "Delete", book, method: :delete, data: { confirm: "You sure?" } %>
 		<%= link_to "Update", book_path(book), :method => :update, :remote => true %>
+		<%= link_to "Add Book", bookexchanges_path(:book_id => book), :method => :post %>
+      <div class="clear"></div>
 	<% end %>
 </div> 
 	

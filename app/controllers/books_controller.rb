@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-before_action :authenticate_user!
+# before_action :authenticate_user!
 before_action :find_book, only: [:edit, :update, :destroy, :show]
 
 	api :GET, "/books" ,"This is books index"
@@ -20,7 +20,7 @@ before_action :find_book, only: [:edit, :update, :destroy, :show]
     	@book
     	respond_to do |format|
     		format.html
-    		format.json{render json: @book}
+    		 format.json{render json: @book}
     	end
   	end
 

@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
 	end
 	def show
 		@profile
+		
 	end
 
 	api :GET, "/profiles/:id/edit" ,"Return view for edit wit current profile" do

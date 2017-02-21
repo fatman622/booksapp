@@ -2,5 +2,20 @@
 <p class="content">Name: <%= @profile.name %></p> 
 <p class="content">Last Name: <%= @profile.last_name %></p>
 <%= link_to "Settings", edit_profile_path(@profile) %> 
-
-	
+<br/>
+<br/>
+<br/>
+<div class="book>"> 
+	<%= @profile.books.each do |book| %>
+		<p class="content">Name: <%= book.name %></p> 
+		<p class="content">Autor: <%= book.autor %></p> 
+		<p class="content">Genre: <%= book.genre %></p> 
+		<p class="content">Year: <%= book.year %></p> 
+		<p class="content"> User: <%= book.user['email'] %></p>
+		<p class="time">Date: <%= book.created_at %></p> 
+		<%= link_to "Show", book_path(book) %>
+		<%= link_to "Delete", book, method: :delete, data: { confirm: "You sure?" } %>
+		<%= link_to "Update", book_path(book), :method => :update, :remote => true %>
+      <div class="clear"></div>
+	<% end %>
+</div> 
